@@ -12,14 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Teachers {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+public class Teachers extends User {
+
     private String phone;
     private String teacherID;
 
@@ -28,24 +22,14 @@ public class Teachers {
     @ManyToOne()
     @JoinColumn(name = "department_id")
     private Departments  departments;
-    @ManyToMany()
-    @JoinTable(
-            name = "teacher_roles",
-            joinColumns = @JoinColumn(name = "teacher_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private List<Roles> roles = new ArrayList<>();
 
-    public Teachers(String firstName, String lastName, String email, String password, String phone,
-                    String teacherID, List<Subjects> subjects, Departments departments,List<Roles> roles) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
+
+    public Teachers(String phone, String teacherID,
+                    List<Subjects> subjects, Departments departments) {
         this.phone = phone;
         this.teacherID = teacherID;
         this.subjects = subjects;
         this.departments = departments;
-        this.roles = roles;
+
     }
 }

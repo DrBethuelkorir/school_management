@@ -13,23 +13,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Staff {
+public class Staff extends User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
     private String phone;
     private String staffID;
 
-    public Staff(String firstName, String lastName, String email, String password, String phone, String staffID) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
+    public Staff(String phone, String staffID) {
         this.phone = phone;
         this.staffID = staffID;
     }

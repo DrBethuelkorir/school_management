@@ -11,14 +11,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Parent {
+public class Parent extends User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
     private String phoneNumber;
     private String address;
     private String relationshipWithStudent;
@@ -26,14 +20,8 @@ public class Parent {
     @OneToMany(mappedBy = "parent")
     private List<Students> student;
 
-
-    public Parent(
-            String firstName, String lastName, String email,
-            String phoneNumber, String address, String relationshipWithStudent,List<Students> student
-            ) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+    public Parent(String phoneNumber, String address,
+                  String relationshipWithStudent, List<Students> student) {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.relationshipWithStudent = relationshipWithStudent;

@@ -8,35 +8,17 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class Roles {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String roleName;
 
-    @OneToOne()
-    @JoinColumn(name = "student_id")
-    private Students student;
-    @OneToOne()
-    @JoinColumn(name = "parent_id")
-    private Parent parent;
-    @OneToOne()
-    @JoinColumn(name = "staff_id")
-    private Staff staff;
     @ManyToMany(mappedBy = "roles")
-    private List<Teachers> teachers = new ArrayList<>();
-
-    public Roles(String roleName, Students student,
-                 Parent parent, Staff staff, List<Teachers> teachers) {
-        this.roleName = roleName;
-        this.student = student;
-        this.parent = parent;
-        this.staff = staff;
-        this.teachers = teachers;
-    }
+    private List<User> users = new ArrayList<>();
 }

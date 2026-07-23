@@ -18,17 +18,16 @@
             private Long id;
             private String subjectName;
 
-            @ManyToMany(mappedBy = "students")
+            @ManyToMany(mappedBy = "subjects")
             private List<Students> students = new ArrayList<>();
-            @ManyToMany()
+            @ManyToOne()
             @JoinColumn(name = "teacher_id")
-            private List<Teachers> teachers = new ArrayList<>();
+            private Teachers teachers;
             @ManyToOne()
             @JoinColumn(name = "subject_id")
             private Departments departments;
 
-            public Subjects(String subjectName, List<Students> students,
-                            List<Teachers> teachers, Departments departments) {
+            public Subjects(String subjectName, List<Students> students, Teachers teachers, Departments departments) {
                 this.subjectName = subjectName;
                 this.students = students;
                 this.teachers = teachers;

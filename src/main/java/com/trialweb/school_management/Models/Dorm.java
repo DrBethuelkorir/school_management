@@ -20,7 +20,7 @@ public class Dorm {
     private String name;
     private Long capacity;
 
-    @OneToMany(mappedBy = "students")
+    @OneToMany(mappedBy = "dorm")
     private List<Students> students;
 
     public Dorm(Long capacity, String name,List<Students> students) {

@@ -14,17 +14,10 @@
         @Getter
         @Setter
         @NoArgsConstructor
-        public class Students {
+        public class Students extends User {
 
-            @Id
-            @GeneratedValue(strategy = GenerationType.IDENTITY)
-           private  Long id;
-           private String firstName;
-           private String surname;
-           private String lastName;
-           private String email;
            private long age;
-           private String password;
+
 
            //relationships
             @ManyToOne()
@@ -50,15 +43,8 @@
             private List<Fee> fee = new ArrayList<>();
 
 
-            public Students(String surname, String firstName,
-                            String lastName, String email, String password, long age, Classes classes, Stream stream,
-                            Dorm dorm, Parent parent,
-                            List<Subjects> subjects, List<Fee> fee) {
-                this.surname = surname;
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.email = email;
-                this.password = password;
+            public Students(long age, Classes classes, Stream stream, Dorm dorm,
+                            Parent parent, List<Subjects> subjects, List<Fee> fee) {
                 this.age = age;
                 this.classes = classes;
                 this.stream = stream;
