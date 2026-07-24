@@ -22,10 +22,10 @@ public class Stream {
     @OneToMany(mappedBy = "stream")
     private List<Students> students = new ArrayList<>();
     @ManyToOne()
-    @JoinColumn(name = "class_id")
+    @JoinColumn(name = "classId")
     private Classes classes;
     @OneToOne()
-    @JoinColumn(name = "teacher_id")
+    @JoinColumn(name = "teacherId")
     private Teachers teachers;
 
     public Stream(String name, String totalNumberOfStudents,

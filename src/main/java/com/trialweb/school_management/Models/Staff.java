@@ -16,10 +16,10 @@ import lombok.Setter;
 public class Staff extends User {
 
     private String phone;
-    private String staffID;
+    private String staffId;
 
-    public Staff(String phone, String staffID) {
+    public Staff(String phone, String staffId) {
         this.phone = phone;
-        this.staffID = staffID;
+        this.staffId = staffId;
     }
 }

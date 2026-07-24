@@ -20,7 +20,7 @@ public class Teachers extends User {
     @OneToMany(mappedBy = "teachers")
     private List<Subjects> subjects = new ArrayList<>();
     @ManyToOne()
-    @JoinColumn(name = "department_id")
+    @JoinColumn(name = "departmentId")
     private Departments  departments;
 
 

@@ -16,21 +16,22 @@
         @NoArgsConstructor
         public class Students extends User {
 
-           private long age;
+           private int age;
+           private String adm;
 
 
            //relationships
             @ManyToOne()
-            @JoinColumn(name = "class_id")
+            @JoinColumn(name = "classId")
             private Classes classes;
             @ManyToOne()
-            @JoinColumn(name = "stream_id")
+            @JoinColumn(name = "streamId")
             private Stream stream;
             @ManyToOne()
-            @JoinColumn(name = "dorm_id")
+            @JoinColumn(name = "dormId")
             private Dorm dorm;
             @ManyToOne(cascade = CascadeType.ALL)
-            @JoinColumn(name = "parent_id")
+            @JoinColumn(name = "parentId")
             private Parent parent;
             @ManyToMany()
             @JoinTable(
@@ -43,7 +44,7 @@
             private List<Fee> fee = new ArrayList<>();
 
 
-            public Students(long age, Classes classes, Stream stream, Dorm dorm,
+            public Students(int age, Classes classes, Stream stream, Dorm dorm,
                             Parent parent, List<Subjects> subjects, List<Fee> fee) {
                 this.age = age;
                 this.classes = classes;
