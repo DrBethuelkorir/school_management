@@ -16,6 +16,6 @@ public class SubjectDto {
     private String subjectName;
     private String subjectCode;
     private List<StudentDto> students;
-    private TeacherDto teachers;
+    private List<TeacherDto> teachers;
     private DepartmentDto departments;
 }

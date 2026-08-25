@@ -17,7 +17,7 @@ public class Teachers extends User {
     private String phone;
     private String teacherID;
 
-    @OneToMany(mappedBy = "teachers")
+    @ManyToMany()
     private List<Subjects> subjects = new ArrayList<>();
     @ManyToOne()
     @JoinColumn(name = "departmentId")

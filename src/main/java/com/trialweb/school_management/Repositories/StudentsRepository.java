@@ -8,17 +8,17 @@ import java.util.Optional;
 
 public interface StudentsRepository extends JpaRepository<Students, Long> {
 
-    Optional<Students> findByName(String name);
+    Optional<Students> findByEmail(String email);
 
     Optional<Students> findByAdm(String adm);
 
-    boolean existsByName(String name);
+    boolean existsByEmail(String email);
 
     boolean existsByAdm(String adm);
 
     long countByAdm(String adm);
 
-    long countByClassesId(Long classId);
+    long countByClassId(Long classId);
 
     long countByStreamId(Long streamId);
 

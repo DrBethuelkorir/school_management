@@ -17,9 +17,8 @@ public class ParentDto {
     private String phoneNumber;
     private String firstName;
     private String lastName;
-    private String PhoneNumber;
     private String Address;
     private String relationshipWithStudent;
-    private List<Roles> roles = new ArrayList<>();
+    private List<RolesDto> roles = new ArrayList<>();
     private List<StudentDto> student;
 }

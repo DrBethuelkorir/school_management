@@ -10,14 +10,15 @@ import java.util.List;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StudentDto {
-    private int id;
+    private Long id;
     private String email;
     private String firstName;
     private String lastName;
     private int age;
+    private String adm;
     private List<Roles> roles;
-    private ClassesDto className;
-    private StreamDto streamName;
+    private ClassesDto classesDto;
+    private StreamDto streamDto;
     private DormDto dormName;
     private ParentDto parentName;
     private List<SubjectDto> subjects;

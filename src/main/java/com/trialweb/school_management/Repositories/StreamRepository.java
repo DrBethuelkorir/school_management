@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface StreamRepository extends JpaRepository<Stream, Long> {
     Optional<Stream> findByName(String name);
-    Long countByClassId(long classId);
-    List<Stream> findByClassId(long classId);
+    Long countById(long streamId);
+    List<Stream> findById(long streamId);
 
 }

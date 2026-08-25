@@ -14,5 +14,5 @@ public class ClassesDto {
     private String name;
     private String totalNumberOfStudents;
     private List<StudentDto> students;
-    private List<Stream> stream;
+    private List<StreamDto> stream;
 }

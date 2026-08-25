@@ -17,7 +17,7 @@ public class Stream {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String totalNumberOfStudents;
+    private int totalNumberOfStudents;
 
     @OneToMany(mappedBy = "stream")
     private List<Students> students = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Stream {
     @JoinColumn(name = "teacherId")
     private Teachers teachers;
 
-    public Stream(String name, String totalNumberOfStudents,
+    public Stream(String name, int totalNumberOfStudents,
                   List<Students> students, Classes classes, Teachers teachers) {
         this.name = name;
         this.totalNumberOfStudents = totalNumberOfStudents;
