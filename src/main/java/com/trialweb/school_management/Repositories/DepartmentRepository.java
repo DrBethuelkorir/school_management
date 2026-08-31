@@ -9,5 +9,4 @@ import java.util.Optional;
 public interface DepartmentRepository extends JpaRepository<Departments, Long> {
     Optional<Departments> findByName(String name);
     boolean existsByName(String name);
-    String CountByDepartmentName(String name);
 }

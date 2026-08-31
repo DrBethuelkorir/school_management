@@ -9,5 +9,4 @@ import java.util.Optional;
 public interface DormRepository extends JpaRepository<Dorm, Long> {
     Optional<Dorm> findByName(String name);
     boolean existsByName(String name);
-    Long countByName(String name);
 }

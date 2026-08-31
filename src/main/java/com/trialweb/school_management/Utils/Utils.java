@@ -5,6 +5,7 @@ import com.trialweb.school_management.Models.*;
 import org.apache.tomcat.util.http.fileupload.util.Streams;
 
 import javax.security.auth.Subject;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -324,4 +325,38 @@ public class Utils {
         }
         return teacherDto;
     }
+   public static UserDto mapUserEntityToUserDto(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setEmail(user.getEmail());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+
+        return userDto;
+   }
+    public static UserDto mapUserEntityToUserDtoPlusRoles(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setEmail(user.getEmail());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+
+        if(user.getRoles()!=null){
+            List<RolesDto> rolesDto = user.getRoles().stream()
+                    .map(Utils::mapRoleEntityToRolesDto)
+                    .toList();
+            userDto.setRoles(rolesDto);
+        }
+        return userDto;
+    }
+    public static List<UserDto> mapUserEntityToUserDtoPlusRoles(List<User> users) {
+        if (users == null || users.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        return users.stream()
+                .map(Utils::mapUserEntityToUserDtoPlusRoles)  // Reuse the single mapper
+                .collect(Collectors.toList());
+    }
+
 }

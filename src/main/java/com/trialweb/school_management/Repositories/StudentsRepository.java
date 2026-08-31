@@ -16,7 +16,6 @@ public interface StudentsRepository extends JpaRepository<Students, Long> {
 
     boolean existsByAdm(String adm);
 
-    long countByAdm(String adm);
 
     long countByClassId(Long classId);
 

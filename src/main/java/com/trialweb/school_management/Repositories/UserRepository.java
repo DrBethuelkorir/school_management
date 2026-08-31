@@ -1,6 +1,5 @@
 package com.trialweb.school_management.Repositories;
 
-import com.trialweb.school_management.Models.Classes;
 import com.trialweb.school_management.Models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
