@@ -1,4 +1,4 @@
-package com.trialweb.school_management.Service;
+package com.trialweb.school_management.Service.User;
 
 import com.trialweb.school_management.Dtos.LoginDto;
 import com.trialweb.school_management.Responses.LoginResponse;

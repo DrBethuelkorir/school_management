@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface SubjectsRepository extends JpaRepository<Subjects, Long> {
-    Optional<Subjects> findByName(String name);
-    boolean existsByName(String name);
+    Optional<Subjects> findBySubjectName(String name);
+    boolean existsBySubjectName(String name);
     Long countBySubjectCode(Long subjectCode);
-    Long countByTeacherId(Long teacherId);
+    Long countById(Long subjectId);
 }

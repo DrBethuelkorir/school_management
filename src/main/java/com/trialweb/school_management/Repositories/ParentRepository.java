@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface ParentRepository extends JpaRepository<Parent, Long> {
-    Optional<Parent> findByName(String name);
+    Optional<Parent> findByFirstName(String name);
+    Boolean existsByEmail(String email);
+    }
 
-}

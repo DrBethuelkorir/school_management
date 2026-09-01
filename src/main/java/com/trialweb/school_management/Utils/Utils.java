@@ -290,7 +290,7 @@ public class Utils {
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setFirstName(teacher.getFirstName());
         teacherDto.setLastName(teacher.getLastName());
-        teacherDto.setTeacherID(teacher.getTeacherID());
+        teacherDto.setTeacherID(teacher.getTeacherId());
         teacherDto.setPhone(teacher.getPhone());
 
         return teacherDto;
@@ -301,7 +301,7 @@ public class Utils {
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setFirstName(teacher.getFirstName());
         teacherDto.setLastName(teacher.getLastName());
-        teacherDto.setTeacherID(teacher.getTeacherID());
+        teacherDto.setTeacherID(teacher.getTeacherId());
         teacherDto.setPhone(teacher.getPhone());
         if(teacher.getSubjects()!=null){
             List<SubjectDto> subjectDto = teacher.getSubjects().stream()
@@ -317,7 +317,7 @@ public class Utils {
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setFirstName(teacher.getFirstName());
         teacherDto.setLastName(teacher.getLastName());
-        teacherDto.setTeacherID(teacher.getTeacherID());
+        teacherDto.setTeacherID(teacher.getTeacherId());
         teacherDto.setPhone(teacher.getPhone());
         if(teacher.getDepartments()!=null){
             DepartmentDto departmentDto = mapDepartmentEntityToDepartmentDto(teacher.getDepartments());
@@ -349,7 +349,7 @@ public class Utils {
         }
         return userDto;
     }
-    public static List<UserDto> mapUserEntityToUserDtoPlusRoles(List<User> users) {
+    public static List<UserDto> mapUsersEntityToUserDtoPlusRoles(List<User> users) {
         if (users == null || users.isEmpty()) {
             return new ArrayList<>();
         }

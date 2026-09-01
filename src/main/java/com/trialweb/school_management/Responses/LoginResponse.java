@@ -1,20 +1,24 @@
 package com.trialweb.school_management.Responses;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.trialweb.school_management.Dtos.UserDto;
-import com.trialweb.school_management.Models.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.Collection;
+
+
+
 @Data
-@   NoArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class LoginResponse {
+public class LoginResponse extends UserResponse{
     private String token;
-    private String refreshToken;
-    private String tokenType;
-    private Long expiresIn;
-    private UserDto userDto;
+    private Collection<GrantedAuthority> role;
+    private String expirationTime;
+    private String message;
+
 }

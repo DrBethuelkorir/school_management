@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TeachersRepository extends JpaRepository<Teachers, Long> {
-    Optional<Teachers> findByName(String name);
-    boolean existsByName(String name);
+    Optional<Teachers> findByFirstName(String name);
+    boolean existsByEmail(String email);
     Long countByDepartmentsId(Long id);
-    Long countByTeacherID(long teacherId);
+    Long countByTeacherId(long teacherId);
 
 }

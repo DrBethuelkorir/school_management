@@ -15,7 +15,7 @@ import java.util.List;
 public class Teachers extends User {
 
     private String phone;
-    private String teacherID;
+    private String teacherId;
 
     @ManyToMany()
     private List<Subjects> subjects = new ArrayList<>();
@@ -24,10 +24,10 @@ public class Teachers extends User {
     private Departments  departments;
 
 
-    public Teachers(String phone, String teacherID,
+    public Teachers(String phone, String teacherId,
                     List<Subjects> subjects, Departments departments) {
         this.phone = phone;
-        this.teacherID = teacherID;
+        this.teacherId = teacherId;
         this.subjects = subjects;
         this.departments = departments;
 

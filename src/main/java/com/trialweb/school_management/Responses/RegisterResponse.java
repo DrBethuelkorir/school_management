@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegisterResponse {
+    private int statusCode;
     private String message;
     private UserDto user;
 }
