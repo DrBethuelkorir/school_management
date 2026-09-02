@@ -14,6 +14,7 @@
         @Getter
         @Setter
         @NoArgsConstructor
+        @PrimaryKeyJoinColumn(name = "user_id")
         public class Students extends User {
 
            private int age;

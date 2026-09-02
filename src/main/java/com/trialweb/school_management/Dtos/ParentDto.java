@@ -14,11 +14,12 @@ import java.util.List;
 public class ParentDto {
     private Long id;
     private String email;
+    private String password;
     private String phoneNumber;
     private String firstName;
     private String lastName;
-    private String Address;
+    private String address;
     private String relationshipWithStudent;
     private List<RolesDto> roles = new ArrayList<>();
-    private List<StudentDto> student;
+    private List<StudentDto> students;
 }

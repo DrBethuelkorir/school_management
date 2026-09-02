@@ -1,25 +1,26 @@
 package com.trialweb.school_management.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
+@PrimaryKeyJoinColumn(name = "user_id")
 public class Staff extends User {
 
-    private String phone;
     private String staffId;
+    private String position;
 
-    public Staff(String phone, String staffId) {
-        this.phone = phone;
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Departments department;
+
+    public Staff(String staffId, Departments department) {
         this.staffId = staffId;
+        this.department = department;
     }
 }

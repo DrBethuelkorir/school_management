@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@PrimaryKeyJoinColumn(name = "user_id")
 public class Teachers extends User {
 
     private String phone;

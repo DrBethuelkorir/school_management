@@ -11,6 +11,6 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RolesDto {
     private Long id;
-    private String role;
+    private String roleName;
     private List<User> users = new ArrayList<>();
 }

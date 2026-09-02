@@ -14,4 +14,5 @@ public class DepartmentDto {
     private String departmentName;
     private List<TeacherDto> teachers;
     private List<SubjectDto>  subjects;
+    private List<StaffDto> staff;
 }

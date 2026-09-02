@@ -32,29 +32,6 @@ public class UserService implements IUserService {
     private final JWTUtils jwtUtils;
 
     @Override
-    public RegisterResponse registerUser(User user) {
-        RegisterResponse registerResponse = new RegisterResponse();
-
-        try {
-            if(userRepository.existsByEmail(user.getEmail())) {
-                throw new CustomExeption(user.getEmail() + " already exists");
-            }
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            User saveduser = userRepository.save(user);
-            UserDto userDto = Utils.mapUserEntityToUserDto(saveduser);
-            registerResponse.setStatusCode(200);
-            registerResponse.setMessage("User registered successfully");
-            registerResponse.setUser(userDto);
-
-        } catch (CustomExeption e) {
-            registerResponse.setMessage(e.getMessage());
-        }catch (Exception e) {
-            registerResponse.setMessage("Error occurred during registration" +e.getMessage());
-        }
-        return registerResponse;
-    }
-
-    @Override
     public LoginResponse loginUser(LoginDto loginDto) {
         LoginResponse loginResponse = new LoginResponse();
 

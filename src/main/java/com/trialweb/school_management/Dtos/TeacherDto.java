@@ -13,11 +13,12 @@ import java.util.List;
 public class TeacherDto {
     private Long id;
     private String email;
+    private  String password;
     private String firstName;
     private String lastName;
     private List<Roles> roles;
     private String phone;
-    private String teacherID;
+    private String teacherId;
     private List<SubjectDto> subjects;
     private DepartmentDto departments;
 }

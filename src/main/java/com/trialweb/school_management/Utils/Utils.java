@@ -290,7 +290,7 @@ public class Utils {
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setFirstName(teacher.getFirstName());
         teacherDto.setLastName(teacher.getLastName());
-        teacherDto.setTeacherID(teacher.getTeacherId());
+        teacherDto.setTeacherId(teacher.getTeacherId());
         teacherDto.setPhone(teacher.getPhone());
 
         return teacherDto;
@@ -301,7 +301,7 @@ public class Utils {
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setFirstName(teacher.getFirstName());
         teacherDto.setLastName(teacher.getLastName());
-        teacherDto.setTeacherID(teacher.getTeacherId());
+        teacherDto.setTeacherId(teacher.getTeacherId());
         teacherDto.setPhone(teacher.getPhone());
         if(teacher.getSubjects()!=null){
             List<SubjectDto> subjectDto = teacher.getSubjects().stream()
@@ -317,7 +317,7 @@ public class Utils {
         teacherDto.setEmail(teacher.getEmail());
         teacherDto.setFirstName(teacher.getFirstName());
         teacherDto.setLastName(teacher.getLastName());
-        teacherDto.setTeacherID(teacher.getTeacherId());
+        teacherDto.setTeacherId(teacher.getTeacherId());
         teacherDto.setPhone(teacher.getPhone());
         if(teacher.getDepartments()!=null){
             DepartmentDto departmentDto = mapDepartmentEntityToDepartmentDto(teacher.getDepartments());
@@ -357,6 +357,26 @@ public class Utils {
         return users.stream()
                 .map(Utils::mapUserEntityToUserDtoPlusRoles)  // Reuse the single mapper
                 .collect(Collectors.toList());
+    }
+    public static StaffDto mapStaffEntityToStaffDto(Staff staff) {
+        StaffDto staffDto = new StaffDto();
+        staffDto.setEmail(staff.getEmail());
+        staffDto.setFirstName(staff.getFirstName());
+        staffDto.setLastName(staff.getLastName());
+        staffDto.setId(staff.getId());
+        staffDto.setStaffId(staff.getStaffId());
+        staffDto.setPhoneNumber(staffDto.getPhoneNumber());
+        staffDto.setPosition(staffDto.getPosition());
+
+        return staffDto;
+    }
+    public  static StaffDto mapStaffEntityToStaffDtoPlusDepartment(Staff staff) {
+        StaffDto staffDto = Utils.mapStaffEntityToStaffDto(staff);
+        if(staff.getDepartment() != null ){
+            DepartmentDto departmentDto = mapDepartmentEntityToDepartmentDto(staff.getDepartment());
+            staffDto.setDepartment(departmentDto);
+        }
+        return staffDto;
     }
 
 }
