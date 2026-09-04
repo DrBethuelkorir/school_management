@@ -12,5 +12,6 @@ public class DormDto {
     private Long id;
     private String name;
     private Long capacity;
+    private long currentOccupancy;
     private List<StudentDto> students;
 }

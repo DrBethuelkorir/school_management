@@ -12,6 +12,7 @@ import java.util.List;
 public class DepartmentDto {
     private Long id;
     private String departmentName;
+    private String description;
     private List<TeacherDto> teachers;
     private List<SubjectDto>  subjects;
     private List<StaffDto> staff;

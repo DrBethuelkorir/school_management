@@ -2,11 +2,10 @@ package com.trialweb.school_management.Utils;
 
 import com.trialweb.school_management.Dtos.*;
 import com.trialweb.school_management.Models.*;
-import org.apache.tomcat.util.http.fileupload.util.Streams;
 
-import javax.security.auth.Subject;
+
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -199,7 +198,7 @@ public class Utils {
     public static RolesDto mapRoleEntityToRolesDto(Roles role) {
         RolesDto rolesDto = new RolesDto();
         rolesDto.setId(role.getId());
-        rolesDto.setRole(role.getRoleName());
+        rolesDto.setRoleName(role.getRoleName());
 
         return rolesDto;
     }
@@ -255,6 +254,7 @@ public class Utils {
         DepartmentDto departmentDto = new DepartmentDto();
         departmentDto.setId(department.getId());
         departmentDto.setDepartmentName(department.getDepartmentName());
+        departmentDto.setDescription(department.getDescription());
 
         return departmentDto;
     }
