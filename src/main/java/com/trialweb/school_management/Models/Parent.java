@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "user_id")
+@DiscriminatorValue("parent")
 public class Parent extends User {
 
     private String phoneNumber;

@@ -378,5 +378,31 @@ public class Utils {
         }
         return staffDto;
     }
+    // Add these methods to your existing Utils class
+
+    public static FeeDto mapFeeEntityToFeeDto(Fee fee) {
+        FeeDto feeDto = new FeeDto();
+        feeDto.setId(fee.getId());
+        feeDto.setTotalBillPerTerm(fee.getTotalBillPerTerm());
+        feeDto.setTotalPaidAmount(fee.getTotalPaidAmount());
+        feeDto.setBalance(fee.getBalance());
+
+        if (fee.getStudents() != null) {
+            feeDto.setAdm(fee.getStudents().getAdm());
+        }
+
+        return feeDto;
+    }
+
+    public static FeeDto mapFeeEntityToFeeDtoPlusStudent(Fee fee) {
+        FeeDto feeDto = mapFeeEntityToFeeDto(fee);
+
+        if (fee.getStudents() != null) {
+            StudentDto studentDto = mapStudentEntityToStudentDto(fee.getStudents());
+            feeDto.setStudent(studentDto);
+        }
+
+        return feeDto;
+    }
 
 }

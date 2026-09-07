@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @PrimaryKeyJoinColumn(name = "user_id")
+@DiscriminatorValue("staff")
 public class Staff extends User {
 
     private String staffId;

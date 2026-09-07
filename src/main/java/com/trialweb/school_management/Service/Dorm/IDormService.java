@@ -4,15 +4,15 @@ import com.trialweb.school_management.Dtos.DormDto;
 import com.trialweb.school_management.Responses.DormResponse;
 
 public interface IDormService {
-    DormResponse createDorm(DormDto dormDto);
 
-    // Read
+    DormResponse createDorm(DormDto dormDto);
     DormResponse getDormById(Long id);
     DormResponse getAllDorms();
-
-    // Update
     DormResponse updateDorm(Long id, DormDto dormDto);
-
-    // Delete
     DormResponse deleteDorm(Long id);
+
+    DormResponse assignStudentToDorm(Long studentId, Long dormId);
+    DormResponse removeStudentFromDorm(Long studentId);
+    DormResponse transferStudentToDorm(Long studentId, Long newDormId);
+    DormResponse getStudentsInDorm(Long dormId);
 }

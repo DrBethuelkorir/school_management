@@ -176,6 +176,7 @@ public class DormService implements IDormService {
      * Assign a student to a dorm
      * This automatically increments currentOccupancy by 1
      */
+    @Override
     @Transactional
     public synchronized DormResponse assignStudentToDorm(Long studentId, Long dormId) {
         DormResponse response = new DormResponse();
@@ -228,6 +229,7 @@ public class DormService implements IDormService {
      * Remove a student from their current dorm
      * This automatically decrements currentOccupancy by 1
      */
+    @Override
     @Transactional
     public DormResponse removeStudentFromDorm(Long studentId) {
         DormResponse response = new DormResponse();
@@ -275,6 +277,7 @@ public class DormService implements IDormService {
     /**
      * Transfer a student from one dorm to another
      */
+    @Override
     @Transactional
     public DormResponse transferStudentToDorm(Long studentId, Long newDormId) {
         DormResponse response = new DormResponse();
@@ -332,6 +335,7 @@ public class DormService implements IDormService {
     /**
      * Get all students in a specific dorm
      */
+    @Override
     public DormResponse getStudentsInDorm(Long dormId) {
         DormResponse response = new DormResponse();
 

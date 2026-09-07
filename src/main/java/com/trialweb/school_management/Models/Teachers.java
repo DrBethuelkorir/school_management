@@ -13,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @PrimaryKeyJoinColumn(name = "user_id")
+@DiscriminatorValue("teacher")
 public class Teachers extends User {
 
     private String phone;

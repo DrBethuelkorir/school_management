@@ -36,7 +36,7 @@ public class SecConfiguration {
         .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(authorizeRequest ->
                         authorizeRequest
-                                .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/auth/**","/students/**").permitAll()
                                 .anyRequest().authenticated())
                 .sessionManagement(manager -> manager
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))

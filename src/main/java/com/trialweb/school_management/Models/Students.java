@@ -15,6 +15,7 @@
         @Setter
         @NoArgsConstructor
         @PrimaryKeyJoinColumn(name = "user_id")
+        @DiscriminatorValue("student")
         public class Students extends User {
 
            private int age;

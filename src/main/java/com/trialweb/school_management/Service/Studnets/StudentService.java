@@ -28,9 +28,9 @@ public class StudentService implements IStudentsService {
             List<StudentDto> studentDtos = students.stream()
                     .map(Utils::mapStudentEntityToStudentDto)
                     .toList();
-            response.setMessage("Student found");
+            response.setMessage("Students found");
             response.setStatusCode(200);
-            response.setStudentDtoList(studentDtos);
+            response.setStudentDtos(studentDtos);
         }catch (Exception e){
             response.setStatusCode(500);
             response.setMessage("Error: " + e.getMessage());
