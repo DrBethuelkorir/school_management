@@ -16,28 +16,28 @@ public class ClassesController {
     private final ClassesService classesService;
 
     @PostMapping("/create")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<ClassResponses> createClass(@RequestBody ClassesDto classesDto) {
         ClassResponses response = classesService.createClass(classesDto);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
     @GetMapping("/all")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<ClassResponses> getAllClasses() {
         ClassResponses response = classesService.getAllClasses();
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<ClassResponses> getClassById(@PathVariable Long id) {
         ClassResponses response = classesService.getClassById(id);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
     @PutMapping("/update/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<ClassResponses> updateClass(
             @PathVariable Long id,
             @RequestBody ClassesDto classesDto) {
@@ -46,7 +46,7 @@ public class ClassesController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<ClassResponses> deleteClass(@PathVariable Long id) {
         ClassResponses response = classesService.deleteClass(id);
         return ResponseEntity.status(response.getStatusCode()).body(response);

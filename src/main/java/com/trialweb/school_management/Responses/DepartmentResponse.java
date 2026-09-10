@@ -1,5 +1,6 @@
 package com.trialweb.school_management.Responses;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.trialweb.school_management.Dtos.DepartmentDto;
 import com.trialweb.school_management.Dtos.StaffDto;
 import com.trialweb.school_management.Dtos.SubjectDto;
@@ -9,6 +10,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DepartmentResponse {
     private int statusCode;
     private String message;

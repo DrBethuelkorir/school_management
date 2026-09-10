@@ -16,35 +16,35 @@ public class TeacherController {
     private final ITeacherService teacherService;
 
     @PostMapping("/register")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<TeacherResponse> registerTeacher(@RequestBody TeacherDto teacherDto) {
         TeacherResponse response = teacherService.registerTeacher(teacherDto);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
     @GetMapping("/all")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<TeacherResponse> getAllTeachers() {
         TeacherResponse response = teacherService.getAllTeachers();
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<TeacherResponse> getTeacherById(@PathVariable Long id) {
         TeacherResponse response = teacherService.getTeacherById(id);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
     @PutMapping("/update")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<TeacherResponse> updateTeacher(@RequestBody TeacherDto teacherDto) {
         TeacherResponse response = teacherService.updateTeacher(teacherDto);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
     @DeleteMapping("/delete/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<TeacherResponse> deleteTeacher(@PathVariable Long id) {
         TeacherResponse response = teacherService.deleteTeacher(id);
         return ResponseEntity.status(response.getStatusCode()).body(response);

@@ -15,9 +15,9 @@ import java.util.Date;
 @Component
 public class JWTUtils {
 
-    @Value("${auth.token.jwtsecret}")
+    @Value("${jwt.secret}")
     private String jwtSecret;
-    @Value("${auth.token.expirationinmils}")
+    @Value("${jwt.expiration}")
     private int expirationTime;
 
     public String generateToken(Authentication authentication) {
@@ -28,7 +28,7 @@ public class JWTUtils {
                 .claim("roles",userPrinciple.getAuthorities())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+ expirationTime) )
-                .signWith(key(), SignatureAlgorithm.HS512).compact();
+                .signWith(key(), SignatureAlgorithm.HS256).compact();
     }
     public Key key(){
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
